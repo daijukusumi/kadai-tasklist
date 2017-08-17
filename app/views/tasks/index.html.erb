@@ -1,10 +1,11 @@
 <h1>タスクの一覧</h1>
 
-<ul>
+<table border="1"
+    <tr></tr><th></th><th>タスク</th><th>ステータス</th></tr>
     <% @tasks.each do |task| %>
-        <li><%= link_to task.id, task %> : <%= task.content %></li>
+        <tr><td><%= link_to task.id, task %></td><td><%= task.content %></td><td><%= task.status %></td></tr>
     <% end %>
-</ul>
+</table>
 
 <br>
 
