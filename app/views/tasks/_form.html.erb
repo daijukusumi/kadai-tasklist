@@ -1,6 +1,6 @@
 <%= form_for(task) do |f| %>
     <% if task.errors.any? %>
-    <div id="alert alert-warning">
+    <div class="alert alert-warning">
       <ul>
         <% task.errors.full_messages.each do |task| %>
           <li><%= task %></li>
@@ -19,5 +19,5 @@
     <%= f.text_field :status, class: 'form-control'%>
   </div>
     
-    <%= f.submit "登録",　class: 'btn-primary' %>
+    <%= f.submit "登録", class: 'btn btn-primary' %>
 <% end %>
