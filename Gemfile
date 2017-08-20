@@ -56,7 +56,7 @@ gem 'kaminari'
 
 gem 'pry-byebug', group: :development
 
-gem 'jquery-rails'
+gem 'thor', '0.19.4'
 
 group :production do
   gem 'pg'
