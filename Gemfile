@@ -57,3 +57,7 @@ gem 'kaminari'
 gem 'pry-byebug', group: :development
 
 gem 'jquery-rails'
+
+group :production do
+  gem 'pg'
+end
