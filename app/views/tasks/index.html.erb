@@ -1,12 +1,27 @@
 <h1>タスクの一覧</h1>
 
-<table border="1"
-    <tr></tr><th></th><th>タスク</th><th>ステータス</th></tr>
-    <% @tasks.each do |task| %>
-        <tr><td><%= link_to task.id, task %></td><td><%= task.content %></td><td><%= task.status %></td></tr>
-    <% end %>
-</table>
+<% if @tasks.any? %>
+    <table class="table table-hover">
+        <thead class="thead-inverse">
+            <tr>
+                <th>#</th>
+                <th>タスク</th>
+                <th>ステータス</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @tasks.each do |task| %>
+                <tr>
+                    <th scope="row"><%= link_to task.id, task %></th>
+                    <td><%= task.content %></td>
+                    <td><%= task.status %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div>
+        <%= paginate @tasks %>
+    </div>
+<% end %>
 
-<br>
-
-<%= link_to "タスクの登録", new_task_path %>
+<%= link_to '新規メッセージの投稿', new_task_path, class: "btn btn-primary" %>
