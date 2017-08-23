@@ -1,7 +1,12 @@
-<div class="center jumbotron text-center">
-  <h1>Task List</h1>
-  <p class="lead">For Simple & Easy Task Management</p>
-  <hr class="my-4"> 
-    <p class="text-danger">New User?</p>
-    <%= link_to 'Sign up now!', sign_up_path, class: 'btn btn-primary btn-block' %>
-</div>
+<% if logged_in? %>
+  <p>ログイン完了ユーザー: <%= current_user.name %></p>
+
+<% else %>
+  <div class="center jumbotron text-center">
+    <h1>Task List</h1>
+    <p class="lead">For Simple & Easy Task Management</p>
+    <hr class="my-4"> 
+      <p class="text-danger">New User?</p>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-primary btn-block' %>
+  </div>
+<% end %>

@@ -1,3 +1,13 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery # :secret => '8ff3ed33f86a431662d8dfe255acdb4a'
+  protect_from_forgery with: :exception
+  
+ include SessionsHelper
+
+  private
+
+  def require_user_logged_in
+    unless logged_in?
+      redirect_to login_url
+    end
+  end
 end
