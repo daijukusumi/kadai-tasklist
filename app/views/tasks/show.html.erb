@@ -15,8 +15,9 @@
   </tr>
 </table>
 
-<%= link_to "タスクの一覧に戻る", tasks_path, class: 'btn btn-primary' %>
-<%= link_to "このタスクを修正する", edit_task_path(@task), class: 'btn btn-primary' %>
-<%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-primary' %>
-
+<ul>
+  <li><%= link_to "タスクの一覧に戻る", tasks_path, class: 'btn btn-primary btn-block' %></li>
+  <li><%= link_to "このタスクを修正する", edit_task_path(@task), class: 'btn btn-primary btn-block' %></li>
+  <li></li><%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-primary btn-block' %>
+</ul>
 
