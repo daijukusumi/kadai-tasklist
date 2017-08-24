@@ -1,12 +1,34 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザー: <%= current_user.name %></p>
+  <div class="row">
+    <aside class="col-md-4  p-10">
+      <%= form_for(@task) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :content, :placeholder => 'タスク内容', class: 'form-control', rows: 3 %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :status, :placeholder => 'ステータス',class: 'form-control', rows: 1 %>
+        </div>
+        <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </aside>
+    <div class="col-xs-8">
+      <%= render 'tasks/task', tasks: @tasks %>
+    </div>
+  </div>
 
 <% else %>
   <div class="center jumbotron text-center">
     <h1>Task List</h1>
     <p class="lead">For Simple & Easy Task Management</p>
     <hr class="my-4"> 
-      <p class="text-danger">New User?</p>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-primary btn-block' %>
+      <div>
+        <a class="text-danger">New User?</a>
+        <%= link_to 'Sign up now!', signup_path, class: 'btn btn-primary btn-block' %>
+      </div>
+      <br>
+      <div>
+        <a class="text-success">Already User?</a>
+        <%= link_to 'Login!', login_path, class: 'btn btn-primary btn-block' %>
+      </div>
   </div>
 <% end %>

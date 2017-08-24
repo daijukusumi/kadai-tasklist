@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
 
@@ -11,6 +12,7 @@ class SessionsController < ApplicationController
     else
       flash[:danger] = 'ログインに失敗しました'
       render 'new'
+    end
   end
 
   def destroy
@@ -29,4 +31,5 @@ class SessionsController < ApplicationController
     else
       return false
     end
+  end
 end

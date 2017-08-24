@@ -1,4 +1,4 @@
-<h1>ID:<%= @task.id %> &gt; タスクの詳細</h1>
+<h3 class="display-4 text-primary">ID:<%= @task.id %> &gt; タスクの詳細</h3>
 
 <table class="table table-hover">
   <tr>
@@ -15,9 +15,10 @@
   </tr>
 </table>
 
-<ul>
-  <li><%= link_to "タスクの一覧に戻る", tasks_path, class: 'btn btn-primary btn-block' %></li>
-  <li><%= link_to "このタスクを修正する", edit_task_path(@task), class: 'btn btn-primary btn-block' %></li>
-  <li></li><%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-primary btn-block' %>
-</ul>
-
+<div class="btn-toolbar">
+  
+    <%= link_to "タスクの一覧に戻る", root_path, class: 'btn btn-default btn-inverse btn-block btn-sm' %>
+    <%= link_to "このタスクを修正する", edit_task_path(@task), class: 'btn btn-primary btn-block btn-sm' %>
+    <%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger btn-block btn-sm' %>
+  
+</div>
